@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/spacing.dart';
-import '../shared/app_text_form_field.dart';
+import '../shared/app_text_form_field_and_label.dart';
 import '../shared/password_text_field.dart';
 
 class LoginFormFields extends StatelessWidget {
@@ -22,7 +22,7 @@ class LoginFormFields extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Column(
         children: [
-          AppTextFormField(
+          AppTextFormFieldAndLabel(
             controller: emailOrPhoneController,
             label: 'Email Address / Phone Number',
             hintText: 'Enter',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_text_form_field.dart';
+import 'app_text_form_field_and_label.dart';
 
 class PasswordTextField extends StatefulWidget {
   final TextEditingController? controller;
@@ -14,7 +14,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
-    return AppTextFormField(
+    return AppTextFormFieldAndLabel(
       controller: widget.controller,
       label: 'Password',
       hintText: '• • • • • • • •',

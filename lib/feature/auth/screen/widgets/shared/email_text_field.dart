@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_text_form_field.dart';
+import 'app_text_form_field_and_label.dart';
 
 class EmailTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -8,7 +8,7 @@ class EmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppTextFormField(
+    return AppTextFormFieldAndLabel(
       controller: controller,
       label: 'Email Address',
       hintText: 'you@email.com',

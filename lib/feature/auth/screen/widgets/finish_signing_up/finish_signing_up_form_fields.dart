@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/spacing.dart';
-import '../shared/app_text_form_field.dart';
+import '../shared/app_text_form_field_and_label.dart';
 import '../shared/email_text_field.dart';
 import '../shared/password_text_field.dart';
 
@@ -34,7 +34,7 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppTextFormField(
+          AppTextFormFieldAndLabel(
             controller: widget.legalNameController,
             label: 'Legal Name',
             hintText: 'Full Name',
@@ -47,7 +47,7 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
             },
           ),
           verticalSpace(20),
-          AppTextFormField(
+          AppTextFormFieldAndLabel(
             controller: widget.dateOfBirthController,
             label: 'Date of birth',
             hintText: 'MM/DD/YYYY',
