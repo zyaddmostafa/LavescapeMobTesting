@@ -32,8 +32,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.9.3
   flutter_svg: ^2.2.1
   intl: ^0.20.2
+  intl_phone_field: ^3.2.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -49,6 +51,13 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/svgs/
+    - assets/svgs/auth/
+    - assets/svgs/nav_bar/
+    - assets/svgs/categories/
 
 flutter_assets:
   assets_path:
@@ -56,8 +65,9 @@ flutter_assets:
     - assets/svgs/
     - assets/svgs/auth/
     - assets/svgs/nav_bar/
+    - assets/svgs/categories/
   output_path: lib/core/helpers
   filename: app_assets.dart
-  field_prefix:    
-  classname: AppAssets     
+  field_prefix: null
+  classname: AppAssets
   ignore_comments: true

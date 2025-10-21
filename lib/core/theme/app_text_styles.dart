@@ -11,8 +11,14 @@ class AppTextStyles {
     color: AppColor.black,
   );
   //========= Semibold Text Styles =========//
+  static const TextStyle font24SemiBoldWhite = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+
   static const TextStyle font20SemiBoldWhite = TextStyle(
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
@@ -40,18 +46,18 @@ class AppTextStyles {
     color: AppColor.labelColor,
   );
   static const TextStyle font14SemiBoldLabelColor = TextStyle(
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: FontWeight.w600,
     color: AppColor.labelColor,
   );
 
   static const TextStyle font14SemiBoldBlack = TextStyle(
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
   static const TextStyle font14SemiBoldPurple = TextStyle(
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: FontWeight.w600,
     color: AppColor.primary,
   );
@@ -61,6 +67,11 @@ class AppTextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: Colors.black,
+  );
+  static const TextStyle font16MediumGrey = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColor.secondary,
   );
 
   static const TextStyle font15MediumLabelColor = TextStyle(
@@ -110,12 +121,12 @@ class AppTextStyles {
   );
 
   static const TextStyle font14RegularGrey = TextStyle(
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: AppColor.secondary,
   );
   static const TextStyle font14RegularBlack = TextStyle(
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: AppColor.black,
   );
