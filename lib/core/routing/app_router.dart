@@ -5,7 +5,9 @@ import '../../feature/auth/screen/login_screen.dart';
 import '../../feature/auth/screen/otp_verification_screen.dart';
 import '../../feature/auth/models/otp_verification_args.dart';
 import '../../feature/auth/screen/sign_up_with_email.dart';
+import '../../feature/explore/screens/explore_map_view_screen.dart';
 import '../../feature/explore/screens/explore_screen.dart';
+import '../../feature/explore/screens/search_result.dart';
 import '../../feature/explore/screens/search_screen.dart';
 import 'routes.dart';
 import '../../feature/auth/screen/sign_up_with_phone_screen.dart';
@@ -47,7 +49,11 @@ class AppRouter {
 
       case Routes.searchScreen:
         return MaterialPageRoute(builder: (_) => const SearchScreen());
+      case Routes.searchResultScreen:
+        return MaterialPageRoute(builder: (_) => const SearchResult());
 
+      case Routes.exploreMapViewScreen:
+        return MaterialPageRoute(builder: (_) => const ExploreMapViewScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

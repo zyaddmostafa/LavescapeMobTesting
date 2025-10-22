@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../core/helpers/app_assets.dart';
 import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/app_color.dart';
@@ -24,9 +26,12 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      appBar: const ExploreAppBar(
+      appBar: ExploreAppBar(
         showBackButton: true,
         showNotification: false,
+        hintText: 'Search ',
+        suffixIcon: SvgPicture.asset(AppAssets.svgsFilter),
+        controller: TextEditingController(),
       ),
       body: Column(
         children: [

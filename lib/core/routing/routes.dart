@@ -9,4 +9,6 @@ class Routes {
 
   static const String exploreScreen = '/explore';
   static const String searchScreen = '/search';
+  static const String searchResultScreen = '/searchResult';
+  static const String exploreMapViewScreen = '/exploreMapView';
 }

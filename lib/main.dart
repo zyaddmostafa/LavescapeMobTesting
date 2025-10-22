@@ -20,7 +20,7 @@ class LavescapeApp extends StatelessWidget {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
           onGenerateRoute: AppRouter.onGenerateRoute,
-          initialRoute: Routes.searchScreen,
+          initialRoute: Routes.exploreScreen,
         );
       },
     );

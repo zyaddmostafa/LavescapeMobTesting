@@ -73,6 +73,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColor.primary,
   );
+
+  static const TextStyle font12SemiBoldLabelColor = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColor.labelColor,
+  );
   //========= Medium Text Styles =========//
 
   static const TextStyle font16MediumBlack = TextStyle(

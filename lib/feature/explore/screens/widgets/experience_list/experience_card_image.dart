@@ -18,7 +18,7 @@ class ExperienceCardImage extends StatelessWidget {
         ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
           child: AspectRatio(
-            aspectRatio: 353 / 343,
+            aspectRatio: 353 / 334,
             child: Image.asset(experience.imageUrl, fit: BoxFit.cover),
           ),
         ),

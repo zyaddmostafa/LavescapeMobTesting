@@ -13,9 +13,12 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ExploreAppBar(
+      appBar: ExploreAppBar(
         showBackButton: false,
         showNotification: true,
+        hintText: 'Search ',
+        suffixIcon: SvgPicture.asset(AppAssets.svgsFilter),
+        controller: TextEditingController(),
       ),
       body: SafeArea(
         child: Column(

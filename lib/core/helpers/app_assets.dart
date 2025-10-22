@@ -46,6 +46,8 @@ class AppAssets {
 
   static const String svgsCategoriesHennaArt = "assets/svgs/categories/henna_art.svg";
 
+  static const String svgsClose = "assets/svgs/close.svg";
+
   static const String svgsConfirmationLogo = "assets/svgs/confirmation_logo.svg";
 
   static const String svgsEditIcon = "assets/svgs/edit_icon.svg";
@@ -55,6 +57,8 @@ class AppAssets {
   static const String svgsFilter = "assets/svgs/filter.svg";
 
   static const String svgsKey = "assets/svgs/key.svg";
+
+  static const String svgsList = "assets/svgs/list.svg";
 
   static const String svgsLogoLavender = "assets/svgs/logo_lavender.svg";
 

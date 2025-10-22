@@ -12,6 +12,12 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showNotification;
   final VoidCallback? onBackPressed;
   final VoidCallback? onNotificationPressed;
+  final Widget? suffixIcon;
+  final TextEditingController? controller;
+  final void Function()? onTap;
+  final String? hintText;
+  final Widget? label;
+  final bool isForSearch;
 
   const ExploreAppBar({
     super.key,
@@ -19,6 +25,12 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showNotification = true,
     this.onBackPressed,
     this.onNotificationPressed,
+    this.suffixIcon,
+    this.controller,
+    this.onTap,
+    this.hintText,
+    this.label,
+    this.isForSearch = true,
   });
 
   @override
@@ -40,7 +52,16 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               horizontalSpace(12),
             ],
-            const Expanded(child: ExploreSearchBar()),
+            Expanded(
+              child: ExploreSearchBar(
+                hintText: hintText,
+                suffixIcon: suffixIcon,
+                controller: controller,
+                onTap: onTap,
+                label: label,
+                isForSearch: isForSearch,
+              ),
+            ),
             if (showNotification) ...[
               horizontalSpace(12),
 
@@ -76,5 +97,5 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(106);
+  Size get preferredSize => const Size.fromHeight(70);
 }
