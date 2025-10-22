@@ -1,31 +1,71 @@
-📱 Lavescape - Experience Booking App
+# 📱 Lavescape - Experience Booking App
+
 A Flutter mobile application for discovering and booking authentic local experiences.
 
-🎯 About
+---
+
+## 🖼️ Screenshots
+
+<div align="center">
+
+### Main Screens
+
+| Login | OTP | Explore |
+|:---:|:---:|:---:|
+| <img src="assets/images/screenshots/login_screen.png" width="250"/> | <img src="assets/images/screenshots/otp_screen.png" width="250"/> | <img src="assets/images/screenshots/explore_screen.png" width="250"/> |
+
+| Search | Map View | Profile Created |
+|:---:|:---:|:---:|
+| <img src="assets/images/screenshots/search_screen.png" width="250"/> | <img src="assets/images/screenshots/explore_map_screen.png" width="250"/> | <img src="assets/images/screenshots/guest_profile_created.png" width="250"/> |
+
+### Authentication Flow
+
+| Email Signup | Phone Signup | Complete Profile |
+|:---:|:---:|:---:|
+| <img src="assets/images/screenshots/sign_in_with_email.png" width="250"/> | <img src="assets/images/screenshots/sign_in_with_phone.png" width="250"/> | <img src="assets/images/screenshots/finish_signing_up.png" width="250"/> |
+
+### Search & Filters
+
+| Search Results | Select Date | Select Guests |
+|:---:|:---:|:---:|
+| <img src="assets/images/screenshots/search_result.png" width="250"/> | <img src="assets/images/screenshots/search_select-date.png" width="250"/> | <img src="assets/images/screenshots/search_select_guests.png" width="250"/> |
+
+### Map Features
+
+| Map View | Expanded Experience |
+|:---:|:---:|
+| <img src="assets/images/screenshots/explore_map_screen.png" width="250"/> | <img src="assets/images/screenshots/explore_map_floatedex.png" width="250"/> |
+
+</div>
+
+---
+
+## 🎯 About
+
 This is a UI implementation project showcasing a complete mobile app design with authentication, search, and booking features. Built with Flutter following modern design patterns.
 
-✨ Features
+---
 
-🔐 Authentication (Phone/Email signup, OTP verification, Login)
-🔍 Advanced search with filters (Location, Date, Guests)
-📅 Interactive date range picker
-👥 Guest selection (Adults/Children)
-🗺️ Map and List view toggle
-🎨 Responsive design for all screen sizes
-⚡ Smooth animations and transitions
+## ✨ Features
 
+- 🔐 Authentication (Phone/Email signup, OTP verification, Login)
+- 🔍 Advanced search with filters (Location, Date, Guests)
+- 📅 Interactive date range picker
+- 👥 Guest selection (Adults/Children)
+- 🗺️ Map and List view toggle
+- 🎨 Responsive design for all screen sizes
+- ⚡ Smooth animations and transitions
 
-🛠️ Tech Stack
+---
 
-Flutter 3.0+
-Dart 3.0+
-flutter_screenutil - Responsive design
-table_calendar - Date picker
-intl_phone_field - Phone input
-flutter_svg - Icons
+## 🛠️ Tech Stack
 
-
-
+- **Flutter** 3.0+
+- **Dart** 3.0+
+- **flutter_screenutil** - Responsive design
+- **table_calendar** - Date picker
+- **intl_phone_field** - Phone input
+- **flutter_svg** - Icons
 
 
 ## 📱 App Flow
@@ -75,28 +115,11 @@ lib/
 │   └── navigation/    # Bottom nav
 │
 └── main.dart
-
-
-
+```
 
 ---
 
-## 🖼️ Screenshots
+## 📝 Note
 
-| Login | OTP | Explore | Search | Map | Profile |
-|-------|-----|---------|--------|-----|---------|
-| ![Login](assets/images/screenshots/login_screen.png) | ![OTP](assets/images/screenshots/otp_screen.png) | ![Explore](assets/images/screenshots/explore_screen.png) | ![Search](assets/images/screenshots/search_screen.png) | ![Map](assets/images/screenshots/explore_map_screen.png) | ![Profile](assets/images/screenshots/guest_profile_created.png) |
+This is a **UI implementation demo** - no backend integration included. All data is static for demonstration purposes.
 
-More screens:
-- ![Sign In with Email](assets/images/screenshots/sign_in_with_email.png)
-- ![Sign In with Phone](assets/images/screenshots/sign_in_with_phone.png)
-- ![Finish Signing Up](assets/images/screenshots/finish_signing_up.png)
-- ![Search Result](assets/images/screenshots/search_result.png)
-- ![Select Date](assets/images/screenshots/search_select-date.png)
-- ![Select Guests](assets/images/screenshots/search_select_guests.png)
-- ![Floated Experience](assets/images/screenshots/explore_map_floatedex.png)
-
-<div align ="center">
-Made with Flutter 💙
-⭐ Star this repo if you found it helpful!
-</div>
