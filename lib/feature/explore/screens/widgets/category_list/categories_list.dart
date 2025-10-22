@@ -13,28 +13,7 @@ class CategoriesList extends StatefulWidget {
 class _CategoriesListState extends State<CategoriesList> {
   int _selectedIndex = 0;
 
-  static const List<CategoryModel> _categories = [
-    CategoryModel(
-      name: "I'm Flexible",
-      iconPath: 'assets/svgs/categories/flexabile.svg',
-    ),
-    CategoryModel(
-      name: 'Camel Riding',
-      iconPath: 'assets/svgs/categories/camel.svg',
-    ),
-    CategoryModel(
-      name: 'Camel Riding',
-      iconPath: 'assets/svgs/categories/camp.svg',
-    ),
-    CategoryModel(
-      name: 'Cooking Class',
-      iconPath: 'assets/svgs/categories/cooking.svg',
-    ),
-    CategoryModel(
-      name: 'Henna Art',
-      iconPath: 'assets/svgs/categories/henna_art.svg',
-    ),
-  ];
+  final List<CategoryModel> _categories = CategoryModel.categories;
 
   @override
   Widget build(BuildContext context) {

@@ -81,6 +81,12 @@ class AppTextStyles {
   );
   //========= Medium Text Styles =========//
 
+  static const TextStyle font18MediumLabelColor = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColor.labelColor,
+  );
+
   static const TextStyle font16MediumBlack = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
@@ -149,6 +155,11 @@ class AppTextStyles {
     color: Colors.white,
   );
 
+  static const TextStyle font16RegularLabelColor = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColor.labelColor,
+  );
   static const TextStyle font14RegularGrey = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,

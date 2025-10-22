@@ -4,7 +4,9 @@ import '../../../core/helpers/app_assets.dart';
 import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/routing/routes.dart';
+import '../../../core/theme/app_color.dart';
 import '../../../core/widgets/custom_floating_action_button.dart';
+import '../model/search_result_arg.dart';
 import 'widgets/category_list/categories_list.dart';
 import 'widgets/experience_list/experience_list_view.dart';
 import 'widgets/shared/explore_app_bar.dart';
@@ -15,6 +17,7 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.backgroundColor,
       appBar: ExploreAppBar(
         showBackButton: false,
         showNotification: true,
@@ -38,7 +41,14 @@ class ExploreScreen extends StatelessWidget {
       ),
       floatingActionButton: CustomFloatingActionButton(
         onPressed: () {
-          context.pushNamed(Routes.exploreMapViewScreen);
+          context.pushNamed(
+            Routes.exploreMapViewScreen,
+            arguments: SearchResultArg(
+              city: 'Madina',
+              rangeDate: 'Aug 20-25',
+              guests: '1 Guest',
+            ),
+          );
         },
         title: 'Map View',
         icon: SvgPicture.asset(AppAssets.svgsMapIcon),

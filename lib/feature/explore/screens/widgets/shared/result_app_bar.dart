@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/helpers/app_assets.dart';
-import 'search_result/search_bar_label.dart';
-import 'shared/explore_app_bar.dart';
+import '../../../../../core/helpers/app_assets.dart';
+import '../../../model/search_result_arg.dart';
+import '../search_result/search_bar_label.dart';
+import 'explore_app_bar.dart';
 
 class ResultAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ResultAppBar({super.key});
+  final SearchResultArg searchResultArguments;
+  const ResultAppBar({super.key, required this.searchResultArguments});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +16,12 @@ class ResultAppBar extends StatelessWidget implements PreferredSizeWidget {
       showBackButton: true,
       showNotification: false,
       isForSearch: false,
-      label: const Center(
+      label: Center(
         child: SearchBarLabel(
           title: 'Camel Ride',
-          location: 'Dubai, UAE',
-          dateRange: 'Aug 10-31',
-          guests: '2 Guests',
+          location: searchResultArguments.city,
+          dateRange: searchResultArguments.rangeDate,
+          guests: searchResultArguments.guests,
         ),
       ),
       suffixIcon: SvgPicture.asset(AppAssets.svgsClose),

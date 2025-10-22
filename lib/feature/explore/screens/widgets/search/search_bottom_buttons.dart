@@ -8,13 +8,24 @@ import '../../../../../core/widgets/custom_app_button.dart';
 class SearchBottomButtons extends StatelessWidget {
   final VoidCallback? onClear;
   final VoidCallback? onSearch;
+  final String clearLabel;
 
-  const SearchBottomButtons({super.key, this.onClear, this.onSearch});
+  const SearchBottomButtons({
+    super.key,
+    this.onClear,
+    this.onSearch,
+    this.clearLabel = 'Clear',
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.w),
+      padding: EdgeInsets.only(
+        top: 12.h,
+        left: 20.w,
+        right: 20.w,
+        bottom: 20.h,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -25,13 +36,13 @@ class SearchBottomButtons extends StatelessWidget {
           ),
         ],
       ),
-      child: SafeArea(
-        top: false,
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 12.h),
         child: Row(
           children: [
             Expanded(
               child: CustomAppButton(
-                label: 'Clear',
+                label: clearLabel,
                 onPressed: onClear,
                 backgroundColor: Colors.white,
                 labelTextStyle: AppTextStyles.font15SemiBoldLabelColor,

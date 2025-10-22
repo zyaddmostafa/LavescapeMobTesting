@@ -24,7 +24,7 @@ class RecentSearchItem extends StatelessWidget {
       child: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
             child: Image.asset(
               imagePath,
               width: 40.w,
@@ -36,15 +36,9 @@ class RecentSearchItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: AppTextStyles.font16MediumBlack,
-              ),
+              Text(title, style: AppTextStyles.font16MediumBlack),
               verticalSpace(4),
-              Text(
-                date,
-                style: AppTextStyles.font12RegularGrey,
-              ),
+              Text(date, style: AppTextStyles.font12RegularGrey),
             ],
           ),
         ],

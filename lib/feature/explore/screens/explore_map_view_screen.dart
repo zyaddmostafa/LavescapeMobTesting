@@ -3,13 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/helpers/app_assets.dart';
+import '../../../core/theme/app_color.dart';
 import '../../../core/widgets/custom_floating_action_button.dart';
 import '../model/experience_model.dart';
+import '../model/search_result_arg.dart';
 import 'widgets/experience_list/experience_card.dart';
-import 'widgets/result_app_bar.dart';
+import 'widgets/shared/result_app_bar.dart';
 
 class ExploreMapViewScreen extends StatefulWidget {
-  const ExploreMapViewScreen({super.key});
+  final SearchResultArg searchResultArguments;
+  const ExploreMapViewScreen({super.key, required this.searchResultArguments});
 
   @override
   State<ExploreMapViewScreen> createState() => _ExploreMapViewScreenState();
@@ -21,7 +24,9 @@ class _ExploreMapViewScreenState extends State<ExploreMapViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ResultAppBar(),
+      backgroundColor: AppColor.backgroundColor,
+
+      appBar: ResultAppBar(searchResultArguments: widget.searchResultArguments),
 
       body: GestureDetector(
         onTap: () {

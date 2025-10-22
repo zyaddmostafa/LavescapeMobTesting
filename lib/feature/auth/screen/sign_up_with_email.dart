@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/routing/routes.dart';
+import '../../../core/theme/app_color.dart';
 import '../../../core/widgets/custom_app_button.dart';
 import 'widgets/shared/auth_methods_list.dart';
 import 'widgets/shared/email_text_field.dart';
@@ -24,6 +25,8 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.backgroundColor,
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),

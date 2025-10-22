@@ -43,10 +43,10 @@ class SearchBarLabel extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Container(
-        width: 4.w,
-        height: 4.h,
-        decoration: BoxDecoration(
-          color: Colors.grey[400],
+        width: 6.w,
+        height: 6.h,
+        decoration: const BoxDecoration(
+          color: Color(0xffD9D9D9),
           shape: BoxShape.circle,
         ),
       ),

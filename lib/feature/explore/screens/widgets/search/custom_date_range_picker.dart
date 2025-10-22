@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../../../../core/theme/app_color.dart';
+import '../../../../../core/theme/app_text_styles.dart';
+
 class CustomDateRangePicker extends StatefulWidget {
   final Function(DateTime? start, DateTime? end)? onDateRangeSelected;
 
   const CustomDateRangePicker({super.key, this.onDateRangeSelected});
 
   @override
-  _CustomDateRangePickerState createState() => _CustomDateRangePickerState();
+  CustomDateRangePickerState createState() => CustomDateRangePickerState();
 }
 
-class _CustomDateRangePickerState extends State<CustomDateRangePicker> {
+class CustomDateRangePickerState extends State<CustomDateRangePicker> {
   DateTime _focusedDay = DateTime(2025, 8, 10);
   DateTime? _rangeStart = DateTime(2025, 8, 10);
   DateTime? _rangeEnd = DateTime(2025, 8, 31);
@@ -20,16 +23,16 @@ class _CustomDateRangePickerState extends State<CustomDateRangePicker> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: TableCalendar(
         firstDay: DateTime(2020),
         lastDay: DateTime(2030),
@@ -38,66 +41,42 @@ class _CustomDateRangePickerState extends State<CustomDateRangePicker> {
         rangeEndDay: _rangeEnd,
         rangeSelectionMode: RangeSelectionMode.toggledOn,
         calendarFormat: CalendarFormat.month,
-        headerStyle: HeaderStyle(
+        headerStyle: const HeaderStyle(
           formatButtonVisible: false,
           titleCentered: true,
-          titleTextStyle: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.black,
-          ),
+          titleTextStyle: AppTextStyles.font18SemiBoldBlack,
           leftChevronIcon: Icon(Icons.chevron_left, color: Colors.grey),
           rightChevronIcon: Icon(Icons.chevron_right, color: Colors.grey),
           headerPadding: EdgeInsets.only(bottom: 16),
         ),
-        daysOfWeekStyle: DaysOfWeekStyle(
-          weekdayStyle: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[600],
-          ),
-          weekendStyle: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[600],
-          ),
+        daysOfWeekStyle: const DaysOfWeekStyle(
+          weekdayStyle: AppTextStyles.font14RegularGrey,
+          weekendStyle: AppTextStyles.font14RegularGrey,
         ),
-        calendarStyle: CalendarStyle(
-          // Default day style
-          defaultTextStyle: TextStyle(fontSize: 14, color: Colors.black),
-          // Weekend style
-          weekendTextStyle: TextStyle(fontSize: 14, color: Colors.black),
-          // Outside month days
-          outsideTextStyle: TextStyle(fontSize: 14, color: Colors.grey[300]),
-          // Range start/end decoration
+        calendarStyle: const CalendarStyle(
+          defaultTextStyle: AppTextStyles.font14MediumLabelColor,
+          weekendTextStyle: AppTextStyles.font14MediumLabelColor,
+          outsideTextStyle: AppTextStyles.font14RegularGrey,
           rangeStartDecoration: BoxDecoration(
-            color: Color(0xFF7C3AED), // Purple
+            color: AppColor.primary,
             shape: BoxShape.circle,
           ),
           rangeEndDecoration: BoxDecoration(
-            color: Color(0xFF7C3AED), // Purple
+            color: AppColor.primary,
             shape: BoxShape.circle,
           ),
-          // Range middle days
-          rangeHighlightColor: Color(0xFF7C3AED).withOpacity(0.1),
-          withinRangeTextStyle: TextStyle(fontSize: 14, color: Colors.black),
-          // Today decoration (if needed)
+          rangeHighlightColor: AppColor.componentLight,
+          withinRangeTextStyle: AppTextStyles.font14MediumLabelColor,
           todayDecoration: BoxDecoration(
             color: Colors.transparent,
             shape: BoxShape.circle,
           ),
-          todayTextStyle: TextStyle(fontSize: 14, color: Colors.black),
-          // Selected decoration
+          todayTextStyle: AppTextStyles.font14MediumLabelColor,
           selectedDecoration: BoxDecoration(
-            color: Color(0xFF7C3AED),
+            color: AppColor.primary,
             shape: BoxShape.circle,
           ),
-          selectedTextStyle: TextStyle(
-            fontSize: 14,
-            color: Colors.white,
-            fontWeight: FontWeight.w500,
-          ),
-          // Cell margin
+          selectedTextStyle: AppTextStyles.font14SemiBoldWhite,
           cellMargin: EdgeInsets.all(4),
         ),
         onRangeSelected: (start, end, focusedDay) {

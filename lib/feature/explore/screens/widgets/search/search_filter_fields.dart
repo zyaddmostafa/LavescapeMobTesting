@@ -4,7 +4,7 @@ import '../../../../../core/widgets/app_text_form_field.dart';
 import 'package:intl/intl.dart';
 import 'custom_date_range_picker.dart';
 import 'date_text_field.dart';
-import 'guest_text_field.dart';
+import '../guest/guest_text_field.dart';
 
 class SearchFilterFields extends StatefulWidget {
   final TextEditingController? dateController;
