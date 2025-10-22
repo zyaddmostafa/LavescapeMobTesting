@@ -11,6 +11,7 @@ class ExploreSearchBar extends StatelessWidget {
   final Widget? label;
   final Widget? suffixIcon;
   final bool isForSearch;
+  final bool readOnly;
   const ExploreSearchBar({
     super.key,
     this.controller,
@@ -19,11 +20,13 @@ class ExploreSearchBar extends StatelessWidget {
     this.label,
     this.suffixIcon,
     this.isForSearch = true,
+    required this.readOnly,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
+      readOnly: readOnly,
       hintText: hintText,
       label: label,
       controller: controller,

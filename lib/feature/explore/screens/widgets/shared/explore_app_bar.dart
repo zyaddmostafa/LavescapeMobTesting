@@ -18,6 +18,7 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? hintText;
   final Widget? label;
   final bool isForSearch;
+  final bool readOnly;
 
   const ExploreAppBar({
     super.key,
@@ -31,6 +32,7 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.hintText,
     this.label,
     this.isForSearch = true,
+    this.readOnly = false,
   });
 
   @override
@@ -60,6 +62,7 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onTap: onTap,
                 label: label,
                 isForSearch: isForSearch,
+                readOnly: readOnly,
               ),
             ),
             if (showNotification) ...[

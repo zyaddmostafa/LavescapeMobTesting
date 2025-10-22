@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../core/helpers/app_assets.dart';
 import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
 import '../../../core/theme/app_color.dart';
 import 'widgets/category_list/categories_list.dart';
 import 'widgets/search/recent_search_list.dart';
@@ -55,9 +56,13 @@ class _SearchScreenState extends State<SearchScreen> {
         ],
       ),
       bottomNavigationBar: SearchBottomButtons(
-        onCancel: () => context.pop(),
+        onClear: () {
+          _cityController.clear();
+          _dateController.clear();
+          _guestController.clear();
+        },
         onSearch: () {
-          // Handle search action
+          context.pushNamed(Routes.searchResultScreen);
         },
       ),
     );

@@ -6,14 +6,10 @@ import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/widgets/custom_app_button.dart';
 
 class SearchBottomButtons extends StatelessWidget {
-  final VoidCallback? onCancel;
+  final VoidCallback? onClear;
   final VoidCallback? onSearch;
 
-  const SearchBottomButtons({
-    super.key,
-    this.onCancel,
-    this.onSearch,
-  });
+  const SearchBottomButtons({super.key, this.onClear, this.onSearch});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +31,8 @@ class SearchBottomButtons extends StatelessWidget {
           children: [
             Expanded(
               child: CustomAppButton(
-                label: 'Cancel',
-                onPressed: onCancel,
+                label: 'Clear',
+                onPressed: onClear,
                 backgroundColor: Colors.white,
                 labelTextStyle: AppTextStyles.font15SemiBoldLabelColor,
                 borderSide: const BorderSide(color: AppColor.componentsColor),
@@ -45,10 +41,7 @@ class SearchBottomButtons extends StatelessWidget {
             horizontalSpace(12),
             Expanded(
               flex: 2,
-              child: CustomAppButton(
-                label: 'Search',
-                onPressed: onSearch,
-              ),
+              child: CustomAppButton(label: 'Search', onPressed: onSearch),
             ),
           ],
         ),

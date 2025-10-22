@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/helpers/app_assets.dart';
+import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
 import '../../../core/widgets/custom_floating_action_button.dart';
 import 'widgets/category_list/categories_list.dart';
 import 'widgets/experience_list/experience_list_view.dart';
@@ -19,6 +21,10 @@ class ExploreScreen extends StatelessWidget {
         hintText: 'Search ',
         suffixIcon: SvgPicture.asset(AppAssets.svgsFilter),
         controller: TextEditingController(),
+        readOnly: true,
+        onTap: () {
+          context.pushNamed(Routes.searchScreen);
+        },
       ),
       body: SafeArea(
         child: Column(
@@ -32,7 +38,9 @@ class ExploreScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: CustomFloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.pushNamed(Routes.exploreMapViewScreen);
+        },
         title: 'Map View',
         icon: SvgPicture.asset(AppAssets.svgsMapIcon),
       ),
