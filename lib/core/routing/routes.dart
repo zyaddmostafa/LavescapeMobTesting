@@ -8,4 +8,5 @@ class Routes {
   static const String loginScreen = '/login';
 
   static const String exploreScreen = '/explore';
+  static const String searchScreen = '/search';
 }

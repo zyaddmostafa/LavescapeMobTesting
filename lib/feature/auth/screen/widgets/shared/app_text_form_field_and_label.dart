@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../../../core/helpers/spacing.dart';
 
 import '../../../../../core/theme/app_text_styles.dart';
-import 'app_text_form_field.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
 
 class AppTextFormFieldAndLabel extends StatelessWidget {
   final String label;
   final String hintText;
-  final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final VoidCallback? onSuffixIconTap;
   final TextEditingController? controller;
   final TextInputType? keyboardType;

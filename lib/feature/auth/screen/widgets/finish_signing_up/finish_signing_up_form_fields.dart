@@ -38,7 +38,7 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
             controller: widget.legalNameController,
             label: 'Legal Name',
             hintText: 'Full Name',
-            prefixIcon: Icons.person_outline,
+            prefixIcon: const Icon(Icons.person, color: Colors.grey),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter your legal name';
@@ -51,7 +51,10 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
             controller: widget.dateOfBirthController,
             label: 'Date of birth',
             hintText: 'MM/DD/YYYY',
-            suffixIcon: Icons.calendar_today_outlined,
+            suffixIcon: const Icon(
+              Icons.calendar_today_outlined,
+              color: Colors.grey,
+            ),
             readOnly: true,
             onTap: () async {
               final date = await showDatePicker(

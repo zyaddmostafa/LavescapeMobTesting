@@ -10,6 +10,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     color: AppColor.black,
   );
+
+  static const TextStyle font11BoldPurple = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.w700,
+    color: AppColor.primary,
+  );
   //========= Semibold Text Styles =========//
   static const TextStyle font24SemiBoldWhite = TextStyle(
     fontSize: 24,
@@ -56,6 +62,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
+
+  static const TextStyle font14SemiBoldWhite = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
   static const TextStyle font14SemiBoldPurple = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
@@ -96,6 +108,11 @@ class AppTextStyles {
     color: AppColor.secondary,
   );
 
+  static const TextStyle font12MediumBlack = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColor.black,
+  );
   static const TextStyle font10MediumGrey = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w600,
@@ -136,6 +153,11 @@ class AppTextStyles {
     color: AppColor.secondary,
   );
 
+  static const TextStyle font12Regularblack = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColor.black,
+  );
   static const TextStyle font12RegularPurple = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,

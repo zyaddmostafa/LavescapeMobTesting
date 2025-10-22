@@ -12,7 +12,7 @@ class EmailTextField extends StatelessWidget {
       controller: controller,
       label: 'Email Address',
       hintText: 'you@email.com',
-      prefixIcon: Icons.email_outlined,
+      prefixIcon: const Icon(Icons.email, color: Colors.grey),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.isEmpty) {

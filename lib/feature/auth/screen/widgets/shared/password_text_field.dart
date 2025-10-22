@@ -19,10 +19,10 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       label: 'Password',
       hintText: '• • • • • • • •',
       obscureText: _obscureText,
-      prefixIcon: Icons.lock_outline,
+      prefixIcon: const Icon(Icons.lock_outline),
       suffixIcon: _obscureText
-          ? Icons.visibility_off_outlined
-          : Icons.visibility_outlined,
+          ? const Icon(Icons.visibility_off_outlined)
+          : const Icon(Icons.visibility_outlined),
 
       onSuffixIconTap: () {
         setState(() {
