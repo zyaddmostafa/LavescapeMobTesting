@@ -90,11 +90,14 @@ class _SearchScreenState extends State<SearchScreen> {
       bottomNavigationBar: SearchBottomButtons(
         clearLabel: _clearLabel,
         onClear: () {
-          _cityController.clear();
-          _dateController.clear();
-          _guestController.clear();
-          setState(() {});
-          context.pop();
+          if (_areAllControllersEmpty) {
+            context.pop();
+          } else {
+            _cityController.clear();
+            _dateController.clear();
+            _guestController.clear();
+            setState(() {});
+          }
         },
         onSearch: _handleSearch,
       ),
