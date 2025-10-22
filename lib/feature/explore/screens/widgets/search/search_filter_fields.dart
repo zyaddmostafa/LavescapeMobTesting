@@ -42,21 +42,26 @@ class _SearchFilterFieldsState extends State<SearchFilterFields> {
               });
             },
           ),
-          if (_showDatePicker) ...[
-            verticalSpace(16),
-            CustomDateRangePicker(
-              onDateRangeSelected: (start, end) {
-                if (start != null && end != null) {
-                  final startDate = DateFormat('MMM d').format(start);
-                  final endDate = DateFormat('d').format(end);
-                  widget.dateController?.text = '$startDate-$endDate';
-                } else if (start != null) {
-                  final startDate = DateFormat('MMM d').format(start);
-                  widget.dateController?.text = startDate;
-                }
-              },
-            ),
-          ],
+
+          verticalSpace(16),
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 300),
+            child: _showDatePicker
+                ? CustomDateRangePicker(
+                    onDateRangeSelected: (start, end) {
+                      if (start != null && end != null) {
+                        final startDate = DateFormat('MMM d').format(start);
+                        final endDate = DateFormat('d').format(end);
+                        widget.dateController?.text = '$startDate-$endDate';
+                      } else if (start != null) {
+                        final startDate = DateFormat('MMM d').format(start);
+                        widget.dateController?.text = startDate;
+                      }
+                    },
+                  )
+                : const SizedBox.shrink(),
+          ),
+
           verticalSpace(12),
           GuestTextField(controller: widget.guestController),
           verticalSpace(30),

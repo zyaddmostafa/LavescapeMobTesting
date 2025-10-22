@@ -85,23 +85,27 @@ class _GuestTextFieldState extends State<GuestTextField> {
         ),
 
         // Expandable Guest Picker
-        if (isExpanded)
-          GuestPickerPanel(
-            adults: adults,
-            children: children,
-            onAdultsChanged: (value) {
-              setState(() {
-                adults = value;
-                _updateController();
-              });
-            },
-            onChildrenChanged: (value) {
-              setState(() {
-                children = value;
-                _updateController();
-              });
-            },
-          ),
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          child: isExpanded
+              ? GuestPickerPanel(
+                  adults: adults,
+                  children: children,
+                  onAdultsChanged: (value) {
+                    setState(() {
+                      adults = value;
+                      _updateController();
+                    });
+                  },
+                  onChildrenChanged: (value) {
+                    setState(() {
+                      children = value;
+                      _updateController();
+                    });
+                  },
+                )
+              : const SizedBox.shrink(),
+        ),
       ],
     );
   }

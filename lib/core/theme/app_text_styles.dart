@@ -83,112 +83,112 @@ class AppTextStyles {
 
   static const TextStyle font18MediumLabelColor = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.labelColor,
   );
 
   static const TextStyle font16MediumBlack = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: Colors.black,
   );
   static const TextStyle font16MediumGrey = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.secondary,
   );
 
   static const TextStyle font15MediumLabelColor = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.labelColor,
   );
   static const TextStyle font15MediumGrey = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.secondary,
   );
 
   static const TextStyle font14MediumLabelColor = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.labelColor,
   );
 
   static const TextStyle font14MediumBlack = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.black,
   );
   static const TextStyle font12MediumGrey = TextStyle(
     fontSize: 12,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.secondary,
   );
 
   static const TextStyle font12MediumPurple = TextStyle(
     fontSize: 12,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.primary,
   );
   static const TextStyle font12MediumBlack = TextStyle(
     fontSize: 12,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.black,
   );
   static const TextStyle font10MediumGrey = TextStyle(
     fontSize: 10,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.secondary,
   );
 
   static const TextStyle font10MediumBlack = TextStyle(
     fontSize: 10,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.black,
   );
   static const TextStyle font10MediumPurple = TextStyle(
     fontSize: 10,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: AppColor.primary,
   );
   //========= Regular Text Styles =========//
 
   static const TextStyle font16RegularWhite = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: Colors.white,
   );
 
   static const TextStyle font16RegularLabelColor = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: AppColor.labelColor,
   );
   static const TextStyle font14RegularGrey = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: AppColor.secondary,
   );
   static const TextStyle font14RegularBlack = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: AppColor.black,
   );
   static const TextStyle font12RegularGrey = TextStyle(
     fontSize: 12,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: AppColor.secondary,
   );
 
   static const TextStyle font12Regularblack = TextStyle(
     fontSize: 12,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: AppColor.black,
   );
   static const TextStyle font12RegularPurple = TextStyle(
     fontSize: 12,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     color: AppColor.primary,
   );
 }

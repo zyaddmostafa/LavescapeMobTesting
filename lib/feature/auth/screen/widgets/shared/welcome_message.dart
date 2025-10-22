@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/theme/app_strings.dart';
 
 class WelcomeMessage extends StatelessWidget {
   const WelcomeMessage({super.key});
@@ -12,12 +13,12 @@ class WelcomeMessage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'Welcome to Lavescape',
+          AppStrings.welcomeTitle,
           style: AppTextStyles.font18SemiBoldBlack,
         ),
         verticalSpace(8),
         const Text(
-          'Discover Authentic Experiences or Share Your Own—Log In or Sign Up to Get Started!',
+          AppStrings.welcomeSubtitle,
           style: AppTextStyles.font14RegularGrey,
         ),
       ],

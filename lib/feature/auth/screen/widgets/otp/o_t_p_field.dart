@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 
 class OTPField extends StatelessWidget {
@@ -29,6 +30,10 @@ class OTPField extends StatelessWidget {
         border: Border.all(color: Colors.grey.shade300, width: 1.5),
       ),
       child: TextFormField(
+        cursorHeight: 16.h,
+        cursorWidth: 2.w,
+        cursorColor: AppColor.primary,
+
         controller: controller,
         focusNode: focusNode,
         textAlign: TextAlign.center,
@@ -38,7 +43,7 @@ class OTPField extends StatelessWidget {
           hintText: '⚬',
           hintStyle: AppTextStyles.font15MediumGrey,
           border: InputBorder.none,
-          contentPadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.all(12),
         ),
 
         inputFormatters: [

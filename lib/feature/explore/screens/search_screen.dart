@@ -25,14 +25,30 @@ class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _guestController = TextEditingController();
 
+  String get _clearLabel =>
+      (_cityController.text.isEmpty &&
+          _dateController.text.isEmpty &&
+          _guestController.text.isEmpty)
+      ? 'Cancel'
+      : 'Clear';
   // Check if all controllers are empty
   bool get _areAllControllersEmpty =>
       _cityController.text.isEmpty &&
       _dateController.text.isEmpty &&
       _guestController.text.isEmpty;
+  @override
+  void initState() {
+    super.initState();
+    _cityController.addListener(() => setState(() {}));
+    _dateController.addListener(() => setState(() {}));
+    _guestController.addListener(() => setState(() {}));
+  }
 
   @override
   void dispose() {
+    _cityController.removeListener(() => setState(() {}));
+    _dateController.removeListener(() => setState(() {}));
+    _guestController.removeListener(() => setState(() {}));
     _cityController.dispose();
     _dateController.dispose();
     _guestController.dispose();
@@ -48,7 +64,6 @@ class _SearchScreenState extends State<SearchScreen> {
         showNotification: false,
         hintText: 'Search',
         suffixIcon: SvgPicture.asset(AppAssets.svgsFilter),
-        controller: TextEditingController(),
       ),
       body: Column(
         children: [
@@ -73,7 +88,7 @@ class _SearchScreenState extends State<SearchScreen> {
         ],
       ),
       bottomNavigationBar: SearchBottomButtons(
-        clearLabel: 'Cancel',
+        clearLabel: _clearLabel,
         onClear: () {
           _cityController.clear();
           _dateController.clear();

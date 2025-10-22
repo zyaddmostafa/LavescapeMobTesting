@@ -14,9 +14,17 @@ class CustomDateRangePicker extends StatefulWidget {
 }
 
 class CustomDateRangePickerState extends State<CustomDateRangePicker> {
-  DateTime _focusedDay = DateTime(2025, 8, 10);
-  DateTime? _rangeStart = DateTime(2025, 8, 10);
-  DateTime? _rangeEnd = DateTime(2025, 8, 31);
+  late DateTime _focusedDay;
+  DateTime? _rangeStart;
+  DateTime? _rangeEnd;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusedDay = DateTime.now();
+    _rangeStart = null;
+    _rangeEnd = null;
+  }
 
   @override
   Widget build(BuildContext context) {

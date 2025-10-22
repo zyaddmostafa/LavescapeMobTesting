@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/theme/app_strings.dart';
 
 class WelcomeBackMessage extends StatelessWidget {
   const WelcomeBackMessage({super.key});
@@ -11,12 +12,15 @@ class WelcomeBackMessage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Welcome Back', style: AppTextStyles.font18SemiBoldBlack),
+        const Text(
+          AppStrings.welcomeBackTitle,
+          style: AppTextStyles.font18SemiBoldBlack,
+        ),
 
         verticalSpace(8),
 
         const Text(
-          'Log in to Explore Unique Experiences or Manage\n Your Own!',
+          AppStrings.welcomeBackSubtitle,
           style: AppTextStyles.font14RegularGrey,
         ),
       ],
