@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/extention.dart';
 import '../../../../../core/routing/routes.dart';
+import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 
 class NewHereOrSignup extends StatelessWidget {
@@ -22,6 +23,8 @@ class NewHereOrSignup extends StatelessWidget {
               text: 'Sign up!',
               style: AppTextStyles.font14SemiBoldPurple.copyWith(
                 decoration: TextDecoration.underline,
+                decorationThickness: 1.5,
+                decorationColor: AppColor.primary,
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {

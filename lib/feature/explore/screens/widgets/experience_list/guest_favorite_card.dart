@@ -33,8 +33,11 @@ class GuestFavoriteCard extends StatelessWidget {
           ),
         ],
       ),
-      child: const Center(
-        child: Text('Guest Favorite', style: AppTextStyles.font12MediumBlack),
+      child: const Padding(
+        padding: EdgeInsets.all(4.0),
+        child: FittedBox(
+          child: Text('Guest Favorite', style: AppTextStyles.font12MediumBlack),
+        ),
       ),
     );
   }
