@@ -20,7 +20,6 @@ class ExploreScreen extends StatelessWidget {
         showNotification: true,
         hintText: 'Search ',
         suffixIcon: SvgPicture.asset(AppAssets.svgsFilter),
-        controller: TextEditingController(),
         readOnly: true,
         onTap: () {
           context.pushNamed(Routes.searchScreen);

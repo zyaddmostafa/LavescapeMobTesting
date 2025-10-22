@@ -27,8 +27,10 @@ class OTPInputState extends State<OTPInput> {
     String otp = _controllers.map((c) => c.text).join();
     if (otp.length < widget.length) {
       AppSnackBar.errorSnackBar(context, 'Please enter the complete OTP code');
+
       return false;
     }
+
     return true;
   }
 

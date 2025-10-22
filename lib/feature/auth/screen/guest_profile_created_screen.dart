@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/helpers/app_assets.dart';
+import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
 import '../../../core/theme/app_color.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/custom_app_button.dart';
@@ -35,38 +37,31 @@ class GuestProfileCreatedScreen extends StatelessWidget {
               ),
 
               const Spacer(),
-              const CustomAppButton(
+              CustomAppButton(
                 label: "I'll do this later",
                 backgroundColor: Colors.transparent,
                 labelTextStyle: AppTextStyles.font15SemiBoldWhite,
-                borderSide: BorderSide(color: Colors.white, width: 1),
+                borderSide: const BorderSide(color: Colors.white, width: 1),
+                onPressed: () {
+                  context.pushNamedAndRemoveUntil(
+                    Routes.exploreScreen,
+                    predicate: (route) => false,
+                  );
+                },
               ),
               verticalSpace(10),
-              // const CustomAppButton(
-              //   label: "Verify Identity",
-              //   backgroundColor: Colors.white,
-              //   labelTextStyle: AppTextStyles.font15SemiBoldPurple,
-              // ),
-              SizedBox(
-                height: 38.h,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle button press
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    minimumSize: const Size(double.infinity, 50),
-                    elevation: 0,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
-                    ),
-                  ),
-                  child: const Text(
-                    'Verify Identity',
-                    style: AppTextStyles.font15SemiBoldPurple,
-                  ),
-                ),
+              CustomAppButton(
+                label: "Verify Identity",
+                backgroundColor: Colors.white,
+                labelTextStyle: AppTextStyles.font15SemiBoldPurple,
+                onPressed: () {
+                  context.pushNamedAndRemoveUntil(
+                    Routes.exploreScreen,
+                    predicate: (route) => false,
+                  );
+                },
               ),
+
               verticalSpace(10),
             ],
           ),

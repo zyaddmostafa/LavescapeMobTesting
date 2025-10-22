@@ -43,15 +43,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               verticalSpace(20),
               CustomAppButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    context.pushNamed(
-                      Routes.otpVerificationScreen,
-                      arguments: OtpVerificationArgs(
-                        email: _emailController.text,
-                        isPhoneSignup: false,
-                      ),
-                    );
-                  }
+                  _validateThenNavigateToOtpVerification(context);
                 },
               ),
               verticalSpace(30),
@@ -64,5 +56,17 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
         ),
       ),
     );
+  }
+
+  void _validateThenNavigateToOtpVerification(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      context.pushNamed(
+        Routes.otpVerificationScreen,
+        arguments: OtpVerificationArgs(
+          email: _emailController.text,
+          isPhoneSignup: false,
+        ),
+      );
+    }
   }
 }

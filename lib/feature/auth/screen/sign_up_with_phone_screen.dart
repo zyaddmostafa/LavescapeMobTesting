@@ -52,20 +52,7 @@ class _SignUpWithPhoneScreenState extends State<SignUpWithPhoneScreen> {
               verticalSpace(20),
               CustomAppButton(
                 onPressed: () {
-                  if (phoneNumber.isNotEmpty) {
-                    context.pushNamed(
-                      Routes.otpVerificationScreen,
-                      arguments: OtpVerificationArgs(
-                        phoneNumber: phoneNumber,
-                        isPhoneSignup: true,
-                      ),
-                    );
-                  } else {
-                    AppSnackBar.errorSnackBar(
-                      context,
-                      'Please enter your phone number',
-                    );
-                  }
+                  _validateThenNavigateToOTPVerification(context);
                 },
               ),
               verticalSpace(30),
@@ -79,5 +66,19 @@ class _SignUpWithPhoneScreenState extends State<SignUpWithPhoneScreen> {
         ),
       ),
     );
+  }
+
+  void _validateThenNavigateToOTPVerification(BuildContext context) {
+    if (phoneNumber.isNotEmpty) {
+      context.pushNamed(
+        Routes.otpVerificationScreen,
+        arguments: OtpVerificationArgs(
+          phoneNumber: phoneNumber,
+          isPhoneSignup: true,
+        ),
+      );
+    } else {
+      AppSnackBar.errorSnackBar(context, 'Please enter your phone number');
+    }
   }
 }

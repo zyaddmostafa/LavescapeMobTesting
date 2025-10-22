@@ -5,11 +5,10 @@ import '../../../core/routing/routes.dart';
 import '../../../core/theme/app_color.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/custom_app_button.dart';
-import 'widgets/shared/custom_app_bar.dart';
+import 'widgets/shared/auth_app_bar.dart';
 
-import 'widgets/shared/o_t_p_input.dart';
-import 'widgets/shared/otp_verification_header.dart';
-import '../models/otp_verification_args.dart';
+import 'widgets/otp/o_t_p_input.dart';
+import 'widgets/otp/otp_verification_header.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   final String? phoneNumber;
@@ -33,7 +32,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      appBar: const CustomAppBar(title: 'Verify Number'),
+      appBar: const AuthAppBar(title: 'Verify Number'),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -54,24 +53,27 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
             CustomAppButton(
               onPressed: () {
-                _validate(context);
+                _validateOTP(context);
               },
             ),
 
             verticalSpace(20),
 
-            const Text.rich(
+            Text.rich(
               TextSpan(
                 children: [
-                  TextSpan(
+                  const TextSpan(
                     text: 'Didn’t receive code? ',
                     style: AppTextStyles.font14RegularGrey,
                   ),
                   TextSpan(
                     text: 'Resend',
-                    style: AppTextStyles.font14RegularBlack,
+                    style: AppTextStyles.font14RegularBlack.copyWith(
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 2,
+                    ),
                   ),
-                  TextSpan(
+                  const TextSpan(
                     text: ' in 00:05 ',
                     style: AppTextStyles.font14RegularGrey,
                   ),
@@ -84,7 +86,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     );
   }
 
-  void _validate(BuildContext context) {
+  void _validateOTP(BuildContext context) {
     if (_otpKey.currentState?.validateOTP() ?? false) {
       widget.isPhoneSignup
           ? context.pushNamed(Routes.finishSigningupScreen)

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../core/helpers/app_assets.dart';
 import 'app_text_form_field_and_label.dart';
 
 class EmailTextField extends StatelessWidget {
@@ -12,7 +14,10 @@ class EmailTextField extends StatelessWidget {
       controller: controller,
       label: 'Email Address',
       hintText: 'you@email.com',
-      prefixIcon: const Icon(Icons.email, color: Colors.grey),
+      prefixIcon: Padding(
+        padding: const EdgeInsets.all(14),
+        child: SvgPicture.asset(AppAssets.svgsMail),
+      ),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.isEmpty) {

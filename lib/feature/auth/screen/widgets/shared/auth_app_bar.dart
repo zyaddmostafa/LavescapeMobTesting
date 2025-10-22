@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/app_text_styles.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const CustomAppBar({super.key, required this.title});
+  const AuthAppBar({super.key, required this.title});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

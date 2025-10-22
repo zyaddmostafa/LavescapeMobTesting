@@ -25,7 +25,7 @@ class NewHereOrSignup extends StatelessWidget {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  context.pushReplacementNamed(Routes.signupWithEmailScreen);
+                  context.pushNamed(Routes.signupWithEmailScreen);
                 },
             ),
           ],

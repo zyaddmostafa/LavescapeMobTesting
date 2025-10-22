@@ -33,6 +33,7 @@ class AppTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
@@ -46,7 +47,9 @@ class AppTextFormField extends StatelessWidget {
         hintText: hintText,
         hintStyle: AppTextStyles.font15MediumGrey,
         prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
+        suffixIcon: onSuffixIconTap != null && suffixIcon != null
+            ? GestureDetector(onTap: onSuffixIconTap, child: suffixIcon)
+            : suffixIcon,
         label: label,
         floatingLabelBehavior: FloatingLabelBehavior.never,
 

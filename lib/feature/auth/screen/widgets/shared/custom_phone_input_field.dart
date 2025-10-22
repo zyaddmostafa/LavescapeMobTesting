@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
+import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 
 class CustomPhoneInputField extends StatefulWidget {
@@ -29,7 +30,7 @@ class _CustomPhoneInputFieldState extends State<CustomPhoneInputField> {
             color: Colors.white,
             borderRadius: const BorderRadius.all(Radius.circular(12)),
             border: Border.all(
-              color: hasError ? Colors.red : Colors.grey.shade300,
+              color: hasError ? Colors.red : AppColor.componentsColor,
               width: hasError ? 2 : 1,
             ),
           ),
@@ -44,6 +45,7 @@ class _CustomPhoneInputFieldState extends State<CustomPhoneInputField> {
                     });
                   }
                 });
+
                 return '';
               }
               WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -54,30 +56,28 @@ class _CustomPhoneInputFieldState extends State<CustomPhoneInputField> {
                   });
                 }
               });
+
               return null;
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: '+1 (000) 000-0000',
-              hintStyle: TextStyle(color: Colors.grey.shade400, fontSize: 16),
+              hintStyle: AppTextStyles.font15MediumGrey,
               border: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               errorBorder: InputBorder.none,
               focusedErrorBorder: InputBorder.none,
-              errorStyle: const TextStyle(fontSize: 0, height: 0),
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 8,
-              ),
+              errorStyle: TextStyle(fontSize: 0, height: 0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               counterText: '', // Remove counter
             ),
             initialCountryCode: 'US',
             showCountryFlag: true,
             showDropdownIcon: true,
-            dropdownIcon: Icon(
+            dropdownIcon: const Icon(
               Icons.keyboard_arrow_down,
-              color: Colors.grey.shade600,
-              size: 24,
+              color: AppColor.secondary,
+              size: 16,
             ),
             flagsButtonPadding: const EdgeInsets.only(left: 16, right: 4),
             dropdownTextStyle: AppTextStyles.font15SemiBoldLabelColor,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/theme/app_color.dart';
 import '../shared/app_text_form_field_and_label.dart';
 import '../shared/email_text_field.dart';
 import '../shared/password_text_field.dart';
@@ -38,11 +41,16 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
             controller: widget.legalNameController,
             label: 'Legal Name',
             hintText: 'Full Name',
-            prefixIcon: const Icon(Icons.person, color: Colors.grey),
+            prefixIcon: const Icon(
+              Icons.person,
+              color: AppColor.secondary,
+              size: 16,
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter your legal name';
               }
+
               return null;
             },
           ),
@@ -51,29 +59,19 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
             controller: widget.dateOfBirthController,
             label: 'Date of birth',
             hintText: 'MM/DD/YYYY',
-            suffixIcon: const Icon(
-              Icons.calendar_today_outlined,
-              color: Colors.grey,
+            suffixIcon: Padding(
+              padding: const EdgeInsets.all(14),
+              child: SvgPicture.asset(AppAssets.svgsCalendarDays),
             ),
             readOnly: true,
             onTap: () async {
-              final date = await showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime(1900),
-                lastDate: DateTime.now(),
-              );
-              if (date != null) {
-                // Format the date as MM/DD/YYYY
-                final formattedDate =
-                    '${date.month.toString().padLeft(2, '0')}/${date.day.toString().padLeft(2, '0')}/${date.year}';
-                widget.dateOfBirthController?.text = formattedDate;
-              }
+              await _datePicker(context);
             },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter your date of birth';
               }
+
               return null;
             },
           ),
@@ -84,5 +82,20 @@ class _FinishSigningUpFormFieldsState extends State<FinishSigningUpFormFields> {
         ],
       ),
     );
+  }
+
+  Future<void> _datePicker(BuildContext context) async {
+    final date = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+    if (date != null) {
+      // Format the date as MM/DD/YYYY
+      final formattedDate =
+          '${date.month.toString().padLeft(2, '0')}/${date.day.toString().padLeft(2, '0')}/${date.year}';
+      widget.dateOfBirthController?.text = formattedDate;
+    }
   }
 }

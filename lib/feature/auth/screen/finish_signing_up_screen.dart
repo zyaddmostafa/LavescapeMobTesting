@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/routing/routes.dart';
+import '../../../core/theme/app_color.dart';
 import '../../../core/widgets/custom_app_button.dart';
-import 'widgets/shared/custom_app_bar.dart';
+import 'widgets/shared/auth_app_bar.dart';
 import 'widgets/finish_signing_up/finish_signing_up_form_fields.dart';
 import 'widgets/finish_signing_up/terms_and_policy.dart';
 
@@ -34,8 +35,8 @@ class _FinishSigningUpScreenState extends State<FinishSigningUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const CustomAppBar(title: 'Finish Signing Up'),
+      backgroundColor: AppColor.backgroundColor,
+      appBar: const AuthAppBar(title: 'Finish Signing Up'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),

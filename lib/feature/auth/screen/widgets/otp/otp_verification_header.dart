@@ -19,6 +19,7 @@ class OtpVerificationHeader extends StatelessWidget {
           'OTP confirmation',
           style: AppTextStyles.font18SemiBoldBlack,
         ),
+        verticalSpace(8),
         Row(
           children: [
             Text.rich(

@@ -62,6 +62,8 @@ class AppAssets {
 
   static const String svgsLogoLavender = "assets/svgs/logo_lavender.svg";
 
+  static const String svgsMail = "assets/svgs/mail.svg";
+
   static const String svgsMapIcon = "assets/svgs/map_icon.svg";
 
   static const String svgsMapPin = "assets/svgs/map-pin.svg";

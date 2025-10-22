@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../core/helpers/app_assets.dart';
 import 'app_text_form_field_and_label.dart';
 
 class PasswordTextField extends StatefulWidget {
@@ -19,7 +21,10 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       label: 'Password',
       hintText: '• • • • • • • •',
       obscureText: _obscureText,
-      prefixIcon: const Icon(Icons.lock_outline),
+      prefixIcon: Padding(
+        padding: const EdgeInsets.all(14),
+        child: SvgPicture.asset(AppAssets.svgsKey),
+      ),
       suffixIcon: _obscureText
           ? const Icon(Icons.visibility_off_outlined)
           : const Icon(Icons.visibility_outlined),

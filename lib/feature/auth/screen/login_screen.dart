@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/helpers/extention.dart';
 import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/custom_app_button.dart';
 import 'widgets/shared/lavescape_logo.dart';
@@ -72,11 +74,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _validateThenDoLogin() {
     if (_formKey.currentState!.validate()) {
-      // Handle successful validation
-      print('Form is valid');
-    } else {
-      // Handle validation failure
-      print('Form is invalid');
+      context.pushNamedAndRemoveUntil(
+        Routes.exploreScreen,
+        predicate: (route) => false,
+      );
     }
   }
 
