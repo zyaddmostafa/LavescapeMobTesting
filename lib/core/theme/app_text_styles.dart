@@ -126,6 +126,11 @@ class AppTextStyles {
     color: AppColor.secondary,
   );
 
+  static const TextStyle font12MediumPurple = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColor.primary,
+  );
   static const TextStyle font12MediumBlack = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,

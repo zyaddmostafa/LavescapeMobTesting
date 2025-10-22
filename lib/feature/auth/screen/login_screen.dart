@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void _validateThenDoLogin() {
     if (_formKey.currentState!.validate()) {
       context.pushNamedAndRemoveUntil(
-        Routes.exploreScreen,
+        Routes.mainNavigationScreen,
         predicate: (route) => false,
       );
     }

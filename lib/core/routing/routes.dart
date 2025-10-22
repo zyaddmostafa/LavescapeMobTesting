@@ -11,4 +11,6 @@ class Routes {
   static const String searchScreen = '/search';
   static const String searchResultScreen = '/searchResult';
   static const String exploreMapViewScreen = '/exploreMapView';
+
+  static const String mainNavigationScreen = '/mainNavigation';
 }

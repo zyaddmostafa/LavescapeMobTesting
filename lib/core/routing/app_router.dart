@@ -10,6 +10,7 @@ import '../../feature/explore/screens/explore_map_view_screen.dart';
 import '../../feature/explore/screens/explore_screen.dart';
 import '../../feature/explore/screens/search_result.dart';
 import '../../feature/explore/screens/search_screen.dart';
+import '../../feature/navigation/main_navigation_screen.dart';
 import 'routes.dart';
 import '../../feature/auth/screen/sign_up_with_phone_screen.dart';
 
@@ -17,6 +18,8 @@ class AppRouter {
   static Route? onGenerateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
     switch (settings.name) {
+      case Routes.mainNavigationScreen:
+        return MaterialPageRoute(builder: (_) => const MainNavigationScreen());
       case Routes.signupWithPhoneScreen:
         return MaterialPageRoute(builder: (_) => const SignUpWithPhoneScreen());
 

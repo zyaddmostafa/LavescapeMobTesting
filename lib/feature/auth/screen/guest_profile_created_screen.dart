@@ -44,7 +44,7 @@ class GuestProfileCreatedScreen extends StatelessWidget {
                 borderSide: const BorderSide(color: Colors.white, width: 1),
                 onPressed: () {
                   context.pushNamedAndRemoveUntil(
-                    Routes.exploreScreen,
+                    Routes.mainNavigationScreen,
                     predicate: (route) => false,
                   );
                 },
@@ -56,7 +56,7 @@ class GuestProfileCreatedScreen extends StatelessWidget {
                 labelTextStyle: AppTextStyles.font15SemiBoldPurple,
                 onPressed: () {
                   context.pushNamedAndRemoveUntil(
-                    Routes.exploreScreen,
+                    Routes.mainNavigationScreen,
                     predicate: (route) => false,
                   );
                 },
