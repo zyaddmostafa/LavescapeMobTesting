@@ -7,5 +7,6 @@ class AppColor {
   static const Color labelColor = Color(0xff1F2937);
   static const Color black = Colors.black;
   static const Color componentsColor = Color(0xFFE5E7EB);
+  static const Color componentLight = Color(0xFFF8FAFC);
   static const Color backgroundColor = Color(0xFFFAFAFA);
 }

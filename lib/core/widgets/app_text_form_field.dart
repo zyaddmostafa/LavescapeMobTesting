@@ -3,7 +3,7 @@ import '../theme/app_color.dart';
 import '../theme/app_text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
-  final String hintText;
+  final String? hintText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final VoidCallback? onSuffixIconTap;
@@ -13,10 +13,11 @@ class AppTextFormField extends StatelessWidget {
   final bool readOnly;
   final VoidCallback? onTap;
   final String? Function(String?)? validator;
+  final Widget? label;
 
   const AppTextFormField({
     super.key,
-    required this.hintText,
+    this.hintText,
     this.prefixIcon,
     this.suffixIcon,
     this.onSuffixIconTap,
@@ -26,6 +27,7 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.onTap,
     this.validator,
+    this.label,
   });
 
   @override
@@ -45,9 +47,14 @@ class AppTextFormField extends StatelessWidget {
         hintStyle: AppTextStyles.font15MediumGrey,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        label: label,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+
         border: _buildInputBorder(AppColor.componentsColor),
         enabledBorder: _buildInputBorder(AppColor.componentsColor),
-        focusedBorder: _buildInputBorder(AppColor.primary),
+        focusedBorder: readOnly
+            ? _buildInputBorder(AppColor.componentsColor)
+            : _buildInputBorder(AppColor.primary),
         errorBorder: _buildInputBorder(Colors.red),
         focusedErrorBorder: _buildInputBorder(Colors.red),
         errorStyle: const TextStyle(fontSize: 12, color: Colors.red),

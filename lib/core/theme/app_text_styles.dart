@@ -102,6 +102,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColor.labelColor,
   );
+
+  static const TextStyle font14MediumBlack = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColor.black,
+  );
   static const TextStyle font12MediumGrey = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,

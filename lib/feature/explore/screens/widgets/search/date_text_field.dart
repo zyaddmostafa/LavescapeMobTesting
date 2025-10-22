@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../core/theme/app_color.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 
-class ExploreSearchBar extends StatelessWidget {
+class DateTextField extends StatefulWidget {
   final TextEditingController? controller;
-  final void Function()? onTap;
-  const ExploreSearchBar({super.key, this.controller, this.onTap});
+  final VoidCallback? onTap;
 
+  const DateTextField({
+    super.key,
+    this.controller,
+    this.onTap,
+  });
+
+  @override
+  State<DateTextField> createState() => _DateTextFieldState();
+}
+
+class _DateTextFieldState extends State<DateTextField> {
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
-      hintText: 'Search',
-      prefixIcon: Padding(
-        padding: const EdgeInsets.all(14),
-        child: SvgPicture.asset(AppAssets.svgsSearch),
-      ),
+      controller: widget.controller,
+      readOnly: true,
+      hintText: 'Select Date',
       suffixIcon: Container(
         padding: const EdgeInsets.all(12),
-
         decoration: const BoxDecoration(
           color: AppColor.componentLight,
           borderRadius: BorderRadius.only(
@@ -32,9 +39,9 @@ class ExploreSearchBar extends StatelessWidget {
             bottom: BorderSide(color: AppColor.componentsColor),
           ),
         ),
-        child: SvgPicture.asset(AppAssets.svgsFilter),
+        child: SvgPicture.asset(AppAssets.svgsCalendarDays),
       ),
-      onTap: onTap,
+      onTap: widget.onTap,
     );
   }
 }

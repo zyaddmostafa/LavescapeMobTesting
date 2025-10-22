@@ -8,8 +8,17 @@ import 'widgets/search/search_bottom_buttons.dart';
 import 'widgets/search/search_filter_fields.dart';
 import 'widgets/shared/explore_app_bar.dart';
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
+
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  final TextEditingController _cityController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
+  final TextEditingController _guestController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +36,11 @@ class SearchScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SearchFilterFields(),
+                  SearchFilterFields(
+                    cityController: _cityController,
+                    dateController: _dateController,
+                    guestController: _guestController,
+                  ),
                   verticalSpace(16),
                   const RecentSearchList(),
                 ],
