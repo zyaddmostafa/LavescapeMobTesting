@@ -6,8 +6,13 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 
 class OtpVerificationHeader extends StatelessWidget {
-  final String phoneNumber;
-  const OtpVerificationHeader({super.key, required this.phoneNumber});
+  final String otpTo;
+  final bool isPhone;
+  const OtpVerificationHeader({
+    super.key,
+    required this.otpTo,
+    required this.isPhone,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +30,13 @@ class OtpVerificationHeader extends StatelessWidget {
             Text.rich(
               TextSpan(
                 children: [
-                  const TextSpan(
-                    text: 'Enter the code we sent over SMS to \n ',
+                  TextSpan(
+                    text:
+                        'Enter the code we sent over ${isPhone ? 'SMS' : 'Email'} to \n ',
                     style: AppTextStyles.font14RegularGrey,
                   ),
                   TextSpan(
-                    text: phoneNumber,
+                    text: otpTo,
                     style: AppTextStyles.font14SemiBoldBlack,
                   ),
                 ],

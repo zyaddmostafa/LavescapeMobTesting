@@ -39,7 +39,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             OtpVerificationHeader(
-              phoneNumber: widget.phoneNumber ?? widget.email ?? '',
+              otpTo: widget.phoneNumber ?? widget.email ?? '',
+              isPhone: widget.isPhoneSignup,
             ),
             verticalSpace(20),
             OTPInput(
